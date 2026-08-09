@@ -5,153 +5,213 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Chetan Malage</title>
-    <link rel="stylesheet" href="css/responsive.css">
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Chetan Malage - Java Full Stack Developer portfolio showcasing projects, skills, and experience in web development.">
+    <meta name="keywords" content="Java Full Stack Developer, Portfolio, React, Spring Boot, Web Development, MCA">
+    <meta name="author" content="Chetan Malage">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Chetan Malage | Java Full Stack Developer">
+    <meta property="og:description"
+        content="Portfolio showcasing projects, skills, and experience in Java Full Stack Development">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chetanmalage.github.io/portfolio-2.0/">
+
+    <!-- Preload Hero Image -->
+    <link rel="preload" href="images/chet.jpeg" as="image">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-    <!-- Navbar -->
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
 
-    <nav class="navbar">
-        <h2 class="logo">Chetan.</h2>
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- Header / Navbar -->
+    <header class="header" role="banner">
+        <a href="#hero" class="logo" aria-label="Home">Chetan<span>.</span></a>
 
+        <!-- Mobile Hamburger Icon -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
-    <!-- Hero section -->
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="#hero" aria-current="page">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
     <main>
-        <section class="hero" id="hero">
-            <div>
-                <img src="images/chet.jpeg" alt="">
-            </div>
-            <div class="hero-description">
-                <div class="hero-text">
-                    <h1>👋 Hi, I'm <span>Chetan</span></h1>
-                    <h3>Java Full Stack Developer.</h3>
-                    <p>Building scalable web applications with
-                        <strong> Java • Spring Boot • React • DSA</strong>
-                    </p>
-                    <p class="availability">Aspiring Java Full Stack Developer | Open to Software Developer
-                        Opportunities</p>
-                    <p class="location">📍 Solapur, India</p>
+        <!-- Hero Section -->
+        <section class="hero" id="hero" aria-label="Hero section">
+            <div class="hero-container">
+                <div class="hero-image-wrapper">
+                    <img src="images/chet.jpeg" alt="Chetan Malage - Java Full Stack Developer" class="hero-img"
+                        loading="eager" width="320" height="320">
                 </div>
-                <div class="hero-button">
-                    <a href=""><button class="resume-button">Download Resume</button></a>
-
-                    <a href="#contact"><button class="contact-button">Contact Me</button></a>
-
-
+                <div class="hero-description">
+                    <div class="hero-text">
+                        <span class="greeting">👋 Hi, I'm</span>
+                        <h1>Chetan Malage</h1>
+                        <h3>Java Full Stack Developer</h3>
+                        <p class="hero-tech">
+                            Building scalable web applications with
+                            <strong>Java • Spring Boot • React • DSA</strong>
+                        </p>
+                        <p class="availability">Aspiring Java Full Stack Developer | Open to Software Developer
+                            Opportunities</p>
+                        <p class="location">
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                            Solapur, India
+                        </p>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="assets/Resume.pdf" download class="btn primary-btn" aria-label="Download Resume">
+                            <i class="fa-solid fa-download" aria-hidden="true"></i> Download Resume
+                        </a>
+                        <a href="#contact" class="btn secondary-btn" aria-label="Contact Me">
+                            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Contact Me
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-
-
-        <section class="about" id="about">
-            <h2>About Me</h2>
-            <div>
+        <!-- About Section -->
+        <section class="about" id="about" aria-label="About section">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="about-intro">
                 <h3>Hello! 👋</h3>
                 <p>I'm Chetan, an MCA student passionate about Java Full Stack Development and Problem Solving.</p>
-                <p>I enjoy building responsive websites, learning new technologies and solving DSA problems.</p>
+                <p>I enjoy building responsive websites, learning new technologies, and solving DSA problems.</p>
             </div>
 
             <div class="about-container">
-
                 <div class="about-card">
-                    <h3>🎓 Education</h3>
-                    <p>Master of Computer Applications</p>
-                    <p>V.V.P. Institute of Engineering & Technology</p>
-                    <p>2025 - Present</p>
+                    <div class="card-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
+                    <h3>Education</h3>
+                    <p class="degree">Master of Computer Applications</p>
+                    <p class="institution">V.V.P. Institute of Engineering & Technology</p>
+                    <span class="year-badge">2025 - Present</span>
                 </div>
 
                 <div class="about-card">
-                    <h3>💻 Currently Learning</h3>
-                    <ul>
-                        <li>✔ Java</li>
-                        <li>✔ Spring Boot</li>
-                        <li>✔ React</li>
-                        <li>✔ Data Structures & Algorithms</li>
-                        <li>✔ MySQL</li>
+                    <div class="card-icon"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div>
+                    <h3>Currently Learning</h3>
+                    <ul class="learning-list">
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Java</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Spring Boot</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> React</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Data Structures & Algorithms</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> MySQL</li>
                     </ul>
                 </div>
 
                 <div class="about-card">
-                    <h3>🎯 Career Goal</h3>
-                    <p>To become a Software Developer in a product-based company where I can build real-world
-                        applications.
-                    </p>
+                    <div class="card-icon"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></div>
+                    <h3>Career Goal</h3>
+                    <p>To become a Software Developer in a product-based company where I can build real-world, scalable
+                        applications.</p>
                 </div>
             </div>
         </section>
 
-
-        <!-- Skills section -->
-        <section class="skills" id="skills">
-            <h2>Skills</h2>
+        <!-- Skills Section -->
+        <section class="skills" id="skills" aria-label="Skills section">
+            <h2 class="section-title">My <span>Skills</span></h2>
             <div class="skills-container">
                 <div class="skills-card">
-                    <h3>💻 Frontend</h3>
+                    <h3><i class="fa-solid fa-code" aria-hidden="true"></i> Frontend</h3>
                     <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
                         <li>JavaScript</li>
+                        <li>React (Learning)</li>
                     </ul>
                 </div>
 
                 <div class="skills-card">
-                    <h3>☕ Backend</h3>
+                    <h3><i class="fa-solid fa-server" aria-hidden="true"></i> Backend</h3>
                     <ul>
                         <li>Java</li>
                         <li>Spring Boot</li>
                         <li>MySQL</li>
+                        <li>REST APIs</li>
                     </ul>
                 </div>
 
                 <div class="skills-card">
-                    <h3>🛠 Tools</h3>
+                    <h3><i class="fa-solid fa-wrench" aria-hidden="true"></i> Tools</h3>
                     <ul>
                         <li>Git</li>
                         <li>GitHub</li>
                         <li>VS Code</li>
+                        <li>IntelliJ IDEA</li>
                     </ul>
                 </div>
 
                 <div class="skills-card">
-                    <h3>🚀 Currently Learning</h3>
+                    <h3><i class="fa-solid fa-rocket" aria-hidden="true"></i> Learning Path</h3>
                     <ul>
                         <li>React</li>
-                        <li>DSA</li>
+                        <li>Data Structures & Algorithms</li>
+                        <li>System Design</li>
                     </ul>
                 </div>
-
             </div>
         </section>
 
-
-        <!-- Project Section -->
-        <section class="projects" id="projects">
-            <h2>Featured Projects</h2>
+        <!-- Projects Section -->
+        <section class="projects" id="projects" aria-label="Projects section">
+            <h2 class="section-title">Featured <span>Projects</span></h2>
             <p class="projects-subtitle">
                 Some of the projects I've built while learning Java Full Stack Development.
             </p>
 
             <div class="projects-container">
-
-                <div class="project-card">
-                    <img src="images/protfollio-ss.png" alt="Portfolio Project">
-
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="images/protfollio-ss.png"
+                            alt="Portfolio 2.0 project screenshot showing modern portfolio design" loading="lazy"
+                            width="600" height="400">
+                    </div>
                     <div class="project-content">
                         <h3>Portfolio 2.0</h3>
                         <p>
                             A modern portfolio website showcasing my projects, technical skills, and development
-                            journey. Built using HTML, CSS, and JavaScript with responsive design and clean, reusable UI
+                            journey. Built using HTML, CSS, and JavaScript with responsive design and clean UI
                             components.
                         </p>
                         <div class="tech-stack">
@@ -159,23 +219,30 @@
                             <span>CSS</span>
                             <span>JavaScript</span>
                         </div>
-
                         <div class="project-buttons">
-                            <a href="https://chetanmalage.github.io/portfolio-2.0/" class="live-demo-button"
-                                target="_blank">Live Demo</a>
-                            <a href="https://github.com/Chetanmalage/portfolio-2.0" class="github-button"
-                                target="_blank">Source Code</a>
+                            <a href="https://chetanmalage.github.io/portfolio-2.0/" class="btn live-demo-button"
+                                target="_blank" rel="noopener noreferrer" aria-label="View live demo">
+                                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/Chetanmalage/portfolio-2.0" class="btn github-button"
+                                target="_blank" rel="noopener noreferrer" aria-label="View source code">
+                                <i class="fa-brands fa-github" aria-hidden="true"></i> Source Code
+                            </a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card">
-                    <img src="images/RPS_ss.png" alt="Portfolio Project">
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="images/RPS_ss.png" alt="Rock Paper Scissors game interface showing gameplay"
+                            loading="lazy" width="600" height="400">
+                    </div>
                     <div class="project-content">
                         <h3>Rock Paper Scissors Game</h3>
                         <p>
                             An interactive Rock Paper Scissors game built using JavaScript. Features random computer
-                            moves, score tracking, and local storage to save the player's progress.
+                            moves, score tracking, and local storage to save player progress.
                         </p>
                         <div class="tech-stack">
                             <span>HTML</span>
@@ -183,90 +250,105 @@
                             <span>JavaScript</span>
                             <span>Local Storage</span>
                         </div>
-
                         <div class="project-buttons">
-                            <a href="https://chetanmalage.github.io/Rock-Paper-Scissors/" class="live-demo-button"
-                                target="_blank">Live Demo</a>
-                            <a href="https://github.com/Chetanmalage/Rock-Paper-Scissors" class="github-button"
-                                target="_blank">Source Code</a>
+                            <a href="https://chetanmalage.github.io/Rock-Paper-Scissors/" class="btn live-demo-button"
+                                target="_blank" rel="noopener noreferrer" aria-label="View live demo">
+                                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/Chetanmalage/Rock-Paper-Scissors" class="btn github-button"
+                                target="_blank" rel="noopener noreferrer" aria-label="View source code">
+                                <i class="fa-brands fa-github" aria-hidden="true"></i> Source Code
+                            </a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card">
-                    <img src="images/youtube-ss.png" alt="Portfolio Project">
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="images/youtube-ss.png" alt="YouTube Clone project showing YouTube interface replica"
+                            loading="lazy" width="600" height="400">
+                    </div>
                     <div class="project-content">
                         <h3>YouTube Clone</h3>
                         <p>
                             A responsive YouTube landing page clone created using HTML and CSS. Designed to replicate
-                            the original interface while improving frontend development skills.
+                            the original interface while improving layout skills.
                         </p>
                         <div class="tech-stack">
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>Flexbox</span>
                         </div>
-
                         <div class="project-buttons">
-                            <a href="https://chetanmalage.github.io/Youtube-clone/" class="live-demo-button"
-                                target="_blank">Live Demo</a>
-                            <a href="https://github.com/Chetanmalage/Youtube-clone" class="github-button"
-                                target="_blank">Source Code</a>
+                            <a href="https://chetanmalage.github.io/Youtube-clone/" class="btn live-demo-button"
+                                target="_blank" rel="noopener noreferrer" aria-label="View live demo">
+                                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/Chetanmalage/Youtube-clone" class="btn github-button"
+                                target="_blank" rel="noopener noreferrer" aria-label="View source code">
+                                <i class="fa-brands fa-github" aria-hidden="true"></i> Source Code
+                            </a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-
-                <div class="project-card">
-                    <img src="images/myntra-ss.png" alt="Portfolio Project">
+                <!-- Project 4 -->
+                <article class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="images/myntra-ss.png" alt="Myntra Clone project showing e-commerce homepage"
+                            loading="lazy" width="600" height="400">
+                    </div>
                     <div class="project-content">
                         <h3>Myntra Clone</h3>
                         <p>
                             A responsive e-commerce homepage inspired by Myntra, built with HTML and CSS. Focused on
-                            modern layouts, responsive design, and clean user interface.
+                            modern layouts and clean responsive user interfaces.
                         </p>
                         <div class="tech-stack">
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>Responsive Design</span>
                         </div>
-
                         <div class="project-buttons">
-                            <a href="https://chetanmalage.github.io/Myntra-Clone/" class="live-demo-button"
-                                target="_blank">Live Demo</a>
-                            <a href="https://github.com/Chetanmalage/Myntra-Clone" class="github-button"
-                                target="_blank">Source Code</a>
+                            <a href="https://chetanmalage.github.io/Myntra-Clone/" class="btn live-demo-button"
+                                target="_blank" rel="noopener noreferrer" aria-label="View live demo">
+                                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/Chetanmalage/Myntra-Clone" class="btn github-button"
+                                target="_blank" rel="noopener noreferrer" aria-label="View source code">
+                                <i class="fa-brands fa-github" aria-hidden="true"></i> Source Code
+                            </a>
                         </div>
                     </div>
-                </div>
+                </article>
 
             </div>
         </section>
 
-
         <!-- Contact Section -->
-        <section class="contact" id="contact">
-            <h2>Contact Me</h2>
-            <p>Have a project or an opportunity? Feel free to connect with me.</p>
+        <section class="contact" id="contact" aria-label="Contact section">
+            <h2 class="section-title">Contact <span>Me</span></h2>
+            <p class="contact-subtitle">Have a project or an opportunity? Feel free to connect with me.</p>
+
             <div class="contact-container">
                 <div class="contact-info">
-
                     <div class="contact-item">
-                        <div class="icon">📧</div>
+                        <div class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
                         <div class="contact-details">
                             <h3>Email</h3>
-                            <p>chetanmalage234@gmail.com</p>
+                            <p><a href="mailto:chetanmalage234@gmail.com">chetanmalage234@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="icon">📱</div>
+                        <div class="icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
                         <div class="contact-details">
                             <h3>Phone</h3>
-                            <p>8888656234</p>
+                            <p><a href="tel:+918888656234">+91 8888656234</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="icon">📍</div>
+                        <div class="icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
                         <div class="contact-details">
                             <h3>Location</h3>
                             <p>Solapur, Maharashtra, India</p>
@@ -275,49 +357,67 @@
                 </div>
 
                 <div class="contact-form">
-                    <form>
+                    <form id="contactForm" novalidate>
                         <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" placeholder="Enter your name" required>
+                            <label for="name">Name <span aria-hidden="true">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required
+                                aria-required="true">
+                            <span class="error-message" id="nameError"></span>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" placeholder="Enter your email" required>
+                            <label for="email">Email <span aria-hidden="true">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required
+                                aria-required="true">
+                            <span class="error-message" id="emailError"></span>
                         </div>
 
                         <div class="form-group">
-                            <label for="message">Message:</label>
-                            <textarea id="message" rows="5" placeholder="Enter your message"></textarea>
+                            <label for="message">Message <span aria-hidden="true">*</span></label>
+                            <textarea id="message" name="message" rows="5" placeholder="Enter your message" required
+                                aria-required="true"></textarea>
+                            <span class="error-message" id="messageError"></span>
                         </div>
 
-                        <button type="submit">Submit</button>
+                        <button type="submit" class="btn submit-btn">
+                            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message
+                        </button>
                     </form>
                 </div>
-
             </div>
         </section>
-
     </main>
 
-    <!-- Footer section -->
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
         <div class="footer-content">
             <h2>Chetan Malage</h2>
-            <p>
-                Aspiring Full Stack Java Developer passionate
-                about building modern and responsive web applications.
-            </p>
+            <p>Aspiring Full Stack Java Developer passionate about building modern and responsive web applications.</p>
             <div class="social-links">
-                <a href="https://github.com/Chetanmalage" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/chetanmalage/" target="_blank">LinkedIn</a>
-                <a href="https://leetcode.com/u/chetanmalage234/" target="_blank">LeetCode</a>
+                <a href="https://github.com/Chetanmalage" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub Profile">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/chetanmalage/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn Profile">
+                    <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn
+                </a>
+                <a href="https://leetcode.com/u/chetanmalage234/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LeetCode Profile">
+                    <i class="fa-brands fa-leetcode" aria-hidden="true"></i> LeetCode
+                </a>
             </div>
-            <p class="copyright">
-                © 2026 Chetan Malage. All Rights Reserved.
-            </p>
+            <p class="copyright">© 2026 Chetan Malage. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- JavaScript Link -->
+    <script src="js/script.js"></script>
 
 </body>
 

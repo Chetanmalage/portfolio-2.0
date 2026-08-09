@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // --- Contact Form Handler with Validation ---
+    // --- Contact Form Handler with Formspree ---
     if (contactForm) {
         const nameInput = document.getElementById("name");
         const emailInput = document.getElementById("email");
@@ -248,8 +248,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        // Form submission
-        contactForm.addEventListener("submit", (e) => {
+        // Form submission to Formspree
+        contactForm.addEventListener("submit", async (e) => {
             e.preventDefault();
             
             // Validate all fields
@@ -262,19 +262,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
 
-                // Simulate sending (replace with actual API call)
-                setTimeout(() => {
-                    alert(`Thank you ${nameInput.value.trim()}! Your message has been sent successfully.`);
-                    contactForm.reset();
-                    
-                    // Reset button
+                try {
+                    const formData = new FormData(contactForm);
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        alert(`Thank you ${nameInput.value.trim()}! Your message has been sent. I'll get back to you soon.`);
+                        contactForm.reset();
+                        
+                        // Reset button
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+                        
+                        // Remove error states
+                        document.querySelectorAll(".error").forEach(el => el.classList.remove("error"));
+                        document.querySelectorAll(".error-message").forEach(el => el.classList.remove("visible"));
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    alert('Oops! Something went wrong. Please try again.');
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
-                    
-                    // Remove error states
-                    document.querySelectorAll(".error").forEach(el => el.classList.remove("error"));
-                    document.querySelectorAll(".error-message").forEach(el => el.classList.remove("visible"));
-                }, 1500);
+                }
             }
         });
     }

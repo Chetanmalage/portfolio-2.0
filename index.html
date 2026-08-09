@@ -357,7 +357,7 @@
                 </div>
 
                 <div class="contact-form">
-                    <form id="contactForm" novalidate>
+                    <form id="contactForm" action="https://formspree.io/f/xkjwjnpk" method="POST" novalidate>
                         <div class="form-group">
                             <label for="name">Name <span aria-hidden="true">*</span></label>
                             <input type="text" id="name" name="name" placeholder="Enter your name" required
@@ -378,6 +378,9 @@
                                 aria-required="true"></textarea>
                             <span class="error-message" id="messageError"></span>
                         </div>
+
+                        <input type="hidden" name="_subject" value="New Portfolio Contact">
+                        <input type="hidden" name="_captcha" value="false">
 
                         <button type="submit" class="btn submit-btn">
                             <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message

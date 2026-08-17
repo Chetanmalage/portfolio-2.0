@@ -1,4 +1,6 @@
-/* --- Responsive Design --- */
+/* =========================
+     RESPONSIVE STYLES
+   ========================= */
 
 /* Tablets & Mid-size Displays */
 @media (max-width: 1024px) {
@@ -451,13 +453,13 @@
         backdrop-filter: none !important;
         box-shadow: none !important;
     }
-    
+
     .hero {
         min-height: auto;
         padding-top: 2rem;
         padding-bottom: 2rem;
     }
-    
+
     .btn,
     .scroll-top-btn,
     .theme-toggle,
@@ -466,22 +468,22 @@
     #loader {
         display: none !important;
     }
-    
+
     .project-card {
         break-inside: avoid;
         page-break-inside: avoid;
         border: 1px solid #ccc;
         box-shadow: none !important;
     }
-    
+
     .project-card:hover {
         transform: none !important;
     }
-    
+
     section {
         padding: 2rem 5%;
     }
-    
+
     .about-card,
     .skills-card,
     .contact-item,
@@ -489,12 +491,12 @@
         border: 1px solid #ccc;
         box-shadow: none !important;
     }
-    
+
     .footer {
         background: none !important;
         border-top: 1px solid #ccc;
     }
-    
+
     .project-img-wrapper img {
         transform: none !important;
     }
@@ -505,11 +507,11 @@
     [data-theme="light"] .navbar {
         background: var(--bg-main);
     }
-    
+
     [data-theme="light"] .navbar.active {
         background: rgba(240, 244, 248, 0.98);
     }
-    
+
     [data-theme="light"] .navbar a {
         color: var(--text-main);
     }
@@ -523,12 +525,12 @@
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-    
+
     .hero-img:hover,
     .project-card:hover .project-img-wrapper img {
         transform: none !important;
     }
-    
+
     .project-card:hover {
         transform: none !important;
     }
@@ -541,29 +543,29 @@
         padding-top: 5rem;
         padding-bottom: 2rem;
     }
-    
+
     .hero-container {
         flex-direction: row;
         gap: 2rem;
     }
-    
+
     .hero-img {
         width: 150px;
         height: 150px;
     }
-    
+
     .hero-text h1 {
         font-size: 1.8rem;
     }
-    
+
     .hero-text h3 {
         font-size: 1rem;
     }
-    
+
     .navbar {
         height: 100vh;
     }
-    
+
     .about-container,
     .skills-container {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

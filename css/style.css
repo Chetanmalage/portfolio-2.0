@@ -242,7 +242,6 @@ section {
     flex: 1.2;
 }
 
-/* Hero Text - Fixed Display */
 .hero-text {
     display: block;
 }
@@ -462,7 +461,6 @@ section {
     transition: transform 0.4s ease;
 }
 
-/* Shimmer loading animation */
 .project-img-wrapper img.loading {
     animation: shimmer 1.5s infinite;
 }

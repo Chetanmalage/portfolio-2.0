@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Typing Animation ---
     const greetingEl = document.querySelector('.greeting');
     if (greetingEl) {
-        const phrases = ['👋 Hi, I\'m Chetan', '💻 Java Full Stack Developer', '🎯 Problem Solver', '🚀 Always Learning'];
+        const phrases = ['👋 Hi, I\'m Chetan', '💻 Aspiring Software Developer', '☕ Java • DSA • MERN • SQL', '🚀 Always Learning'];
         let phraseIndex = 0;
         let charIndex = 0;
         let isDeleting = false;

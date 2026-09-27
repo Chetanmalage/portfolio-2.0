@@ -31,7 +31,7 @@ export default function Contact() {
     }
 
     return (
-        <section className="pt-32 pb-20 px-6">
+        <section className="pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6">
             <div className="max-w-4xl mx-auto">
                 <div className="mb-12 text-center">
                     <p className="text-accent font-mono text-sm mb-2">04. Contact</p>
@@ -45,7 +45,7 @@ export default function Contact() {
                     {/* Left — Contact info */}
                     <div className="space-y-4">
                         <a href={`mailto:${personal.email}`}
-                            className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card hover:border-accent/50 transition-colors">
+                            className="flex min-h-20 items-center gap-4 p-4 rounded-xl border border-border bg-card hover:border-accent/50 transition-colors">
                             <div className="w-10 h-10 rounded-lg bg-bg border border-border flex items-center justify-center text-accent">
                                 <FiMail />
                             </div>
@@ -56,7 +56,7 @@ export default function Contact() {
                         </a>
 
                         <a href={`tel:${personal.phone}`}
-                            className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card hover:border-accent/50 transition-colors">
+                            className="flex min-h-20 items-center gap-4 p-4 rounded-xl border border-border bg-card hover:border-accent/50 transition-colors">
                             <div className="w-10 h-10 rounded-lg bg-bg border border-border flex items-center justify-center text-accent">
                                 <FiPhone />
                             </div>
@@ -66,7 +66,7 @@ export default function Contact() {
                             </div>
                         </a>
 
-                        <div className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card">
+                        <div className="flex min-h-20 items-center gap-4 p-4 rounded-xl border border-border bg-card">
                             <div className="w-10 h-10 rounded-lg bg-bg border border-border flex items-center justify-center text-accent">
                                 <FiMapPin />
                             </div>
@@ -103,23 +103,23 @@ export default function Contact() {
                     <div className="p-6 rounded-2xl border border-border bg-card">
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div>
-                                <label className="text-xs text-muted uppercase tracking-wider block mb-2">Name</label>
-                                <input type="text" name="name" required
+                                <label htmlFor="contact-name" className="text-xs text-muted uppercase tracking-wider block mb-2">Name</label>
+                                <input id="contact-name" type="text" name="name" autoComplete="name" required
                                     className="w-full px-4 py-3 rounded-lg bg-bg border border-border text-text placeholder:text-muted focus:border-accent focus:outline-none transition-colors"
                                     placeholder="Your name" />
                             </div>
 
                             <div>
-                                <label className="text-xs text-muted uppercase tracking-wider block mb-2">Email</label>
-                                <input type="email" name="email" required
+                                <label htmlFor="contact-email" className="text-xs text-muted uppercase tracking-wider block mb-2">Email</label>
+                                <input id="contact-email" type="email" name="email" autoComplete="email" required
                                     className="w-full px-4 py-3 rounded-lg bg-bg border border-border text-text placeholder:text-muted focus:border-accent focus:outline-none transition-colors"
                                     placeholder="you@example.com" />
                             </div>
 
                             <div>
-                                <label className="text-xs text-muted uppercase tracking-wider block mb-2">Message</label>
-                                <textarea name="message" required rows="5"
-                                    className="w-full px-4 py-3 rounded-lg bg-bg border border-border text-text placeholder:text-muted focus:border-accent focus:outline-none transition-colors resize-none"
+                                <label htmlFor="contact-message" className="text-xs text-muted uppercase tracking-wider block mb-2">Message</label>
+                                <textarea id="contact-message" name="message" required rows="5"
+                                    className="w-full px-4 py-3 rounded-lg bg-bg border border-border text-text placeholder:text-muted focus:border-accent focus:outline-none transition-colors resize-y"
                                     placeholder="What's on your mind?" />
                             </div>
 
@@ -130,10 +130,10 @@ export default function Contact() {
                             </button>
 
                             {status === 'success' && (
-                                <p className="text-sm text-center text-accent">✓ Message sent! I'll get back to you soon.</p>
+                                <p role="status" aria-live="polite" className="text-sm text-center text-accent">Message sent! I'll get back to you soon.</p>
                             )}
                             {status === 'error' && (
-                                <p className="text-sm text-center text-red-400">✗ Something went wrong. Try again.</p>
+                                <p role="alert" className="text-sm text-center text-red-400">Something went wrong. Try again.</p>
                             )}
                         </form>
                     </div>

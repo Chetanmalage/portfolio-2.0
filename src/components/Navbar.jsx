@@ -22,17 +22,17 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
-    setOpen(false)
     window.scrollTo(0, 0)
   }, [pathname])
 
   return (
     <nav
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'backdrop-blur-lg bg-black/70 border-b border-border' : 'bg-transparent'
+        scrolled ? 'backdrop-blur-lg bg-black/90 border-b border-border' : 'backdrop-blur-md bg-black/70'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <Link to="/" className="text-xl font-bold text-accent hover:text-accent-dim transition-colors">
           Chetan Malage<span className="text-text">.</span>
         </Link>
@@ -42,6 +42,8 @@ export default function Navbar() {
             <Link
               key={item.to}
               to={item.to}
+              onClick={() => setOpen(false)}
+              aria-current={pathname === item.to ? 'page' : undefined}
               className={`text-sm transition-colors ${
                 pathname === item.to ? 'text-accent font-medium' : 'text-muted hover:text-text'
               }`}
@@ -52,22 +54,25 @@ export default function Navbar() {
         </div>
 
         <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-2xl text-text"
-          aria-label="Toggle menu"
+          onClick={() => setOpen((isOpen) => !isOpen)}
+          className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-lg text-2xl text-text hover:bg-white/5"
+          aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
         >
           {open ? <HiX /> : <HiMenu />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden bg-card border-t border-border">
-          <div className="px-6 py-4 flex flex-col gap-4">
+        <div id="mobile-navigation" className="md:hidden bg-card border-t border-border">
+          <div className="px-4 sm:px-6 py-3 flex flex-col">
             {NAV.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className={`text-sm ${
+                aria-current={pathname === item.to ? 'page' : undefined}
+                className={`flex min-h-11 items-center rounded-lg px-3 text-sm ${
                   pathname === item.to ? 'text-accent font-medium' : 'text-muted'
                 }`}
               >

@@ -32,15 +32,15 @@ function ProjectCard({ project, featured }) {
                     <div className="flex gap-2 shrink-0">
                         {project.githubUrl && (
                             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
-                                className="text-muted hover:text-accent transition-colors text-lg"
-                                aria-label="GitHub">
+                                className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-muted hover:bg-white/5 hover:text-accent transition-colors text-lg"
+                                aria-label={`${project.title} source code on GitHub`}>
                                 <FiGithub />
                             </a>
                         )}
                         {project.liveUrl && (
                             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
-                                className="text-muted hover:text-accent transition-colors text-lg"
-                                aria-label="Live">
+                                className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-muted hover:bg-white/5 hover:text-accent transition-colors text-lg"
+                                aria-label={`${project.title} live demo`}>
                                 <FiExternalLink />
                             </a>
                         )}
@@ -66,7 +66,7 @@ export default function Projects() {
     const others = projects.filter((p) => !p.featured)
 
     return (
-        <section className="pt-32 pb-20 px-6">
+        <section className="pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6">
             <div className="max-w-6xl mx-auto">
                 <div className="mb-12">
                     <p className="text-accent font-mono text-sm mb-2">02. Projects</p>

@@ -11,7 +11,13 @@ export default function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <main>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-accent focus:px-4 focus:py-3 focus:text-black"
+      >
+        Skip to content
+      </a>
+      <main id="main-content" tabIndex="-1">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

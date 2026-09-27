@@ -3,7 +3,7 @@ import { experience, about } from '../data/portfolio'
 
 export default function Experience() {
     return (
-        <section className="pt-32 pb-20 px-6">
+        <section className="pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6">
             <div className="max-w-4xl mx-auto">
                 <div className="mb-12">
                     <p className="text-accent font-mono text-sm mb-2">03. Experience</p>

@@ -121,3 +121,26 @@ export const experience = [
         ],
     },
 ]
+
+$headers = @{
+    Authorization = "Bearer freellmapi-56007ee2501d8d70de7fc5b2a55240ae9efa0182fa37d505"
+    "Content-Type" = "application/json"
+}
+
+$body = @{
+    model = "auto"
+    messages = @(
+        @{
+            role = "user"
+            content = "Reply with exactly: FreeLLMAPI is working."
+        }
+    )
+} | ConvertTo-Json -Depth 5
+
+$response = Invoke-RestMethod `
+    -Uri "http://127.0.0.1:31415/v1/chat/completions" `
+    -Method Post `
+    -Headers $headers `
+    -Body $body
+
+$response.choices[0].message.content

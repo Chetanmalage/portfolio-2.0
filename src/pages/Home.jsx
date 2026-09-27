@@ -29,11 +29,11 @@ export default function Home() {
                                 Hi, my name is
                             </p>
 
-                            <h1 className="text-5xl md:text-7xl font-bold text-text mb-4 leading-tight">
+                            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-text mb-4 leading-tight">
                                 {personal.name}.
                             </h1>
 
-                            <h2 className="text-3xl md:text-5xl font-bold text-muted mb-6 leading-tight">
+                            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-muted mb-6 leading-tight">
                                 I build things for the web.
                             </h2>
 
@@ -63,15 +63,15 @@ export default function Home() {
 
                             <div className="flex gap-5 text-muted text-xl">
                                 <a href={personal.github} target="_blank" rel="noopener noreferrer"
-                                    className="hover:text-accent transition-colors" aria-label="GitHub">
+                                    className="inline-flex h-11 w-11 items-center justify-center rounded-lg hover:bg-white/5 hover:text-accent transition-colors" aria-label="GitHub">
                                     <FaGithub />
                                 </a>
                                 <a href={personal.linkedin} target="_blank" rel="noopener noreferrer"
-                                    className="hover:text-accent transition-colors" aria-label="LinkedIn">
+                                    className="inline-flex h-11 w-11 items-center justify-center rounded-lg hover:bg-white/5 hover:text-accent transition-colors" aria-label="LinkedIn">
                                     <FaLinkedin />
                                 </a>
                                 <a href={personal.leetcode} target="_blank" rel="noopener noreferrer"
-                                    className="hover:text-accent transition-colors" aria-label="LeetCode">
+                                    className="inline-flex h-11 w-11 items-center justify-center rounded-lg hover:bg-white/5 hover:text-accent transition-colors" aria-label="LeetCode">
                                     <SiLeetcode />
                                 </a>
                             </div>
@@ -87,7 +87,7 @@ export default function Home() {
                                 <img
                                     src={personal.profileImage}
                                     alt={personal.name}
-                                    className="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-accent/30"
+                                    className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-accent/30"
                                 />
                             </div>
                         </div>
@@ -102,7 +102,7 @@ export default function Home() {
             </section>
 
             {/* Featured projects preview */}
-            <section className="py-20 px-6 border-t border-border">
+            <section className="py-16 sm:py-20 px-4 sm:px-6 border-t border-border">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex justify-between items-end mb-10">
                         <div>
@@ -124,7 +124,7 @@ export default function Home() {
                             <Link
                                 key={p.id}
                                 to="/projects"
-                                className="group p-6 rounded-2xl border border-border bg-card hover:border-accent/50 transition-all"
+                                className="group p-4 sm:p-6 rounded-2xl border border-border bg-card hover:border-accent/50 transition-all"
                             >
                                 <div className="h-40 rounded-lg mb-4 overflow-hidden bg-bg flex items-center justify-center">
                                     {p.image ? (
